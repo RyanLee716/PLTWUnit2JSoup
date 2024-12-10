@@ -3,6 +3,8 @@
         "."
     ],
     "java.project.referencedLibraries": [
-        "jsoup-1.18.3.jar"
+        "jsoup-1.18.3.jar",
+        "/Users/ryanlee/Desktop/PLTWUnit2JSoup/lib/jsoup-1.18.3.jar",
+        "lib/**/*.jar"
     ]
 }
