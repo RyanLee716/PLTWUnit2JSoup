@@ -42,14 +42,14 @@ class soup {
                 reviewText = reviewTextDiv.text();
             }
 
-            dataArr.add(new String[] {reviewerName, ratings, reviewText});
+            dataArr.add(new String[] {reviewerName, ratings, reviewText, "Hello " + reviewerName + ", we see that you enjoyed reading the Harry Potter series with your child, as you gave it " + ratings + " stars! We would like to advertise this fantasy novel to you as well."});
         }
         File file = new File("AllReviews.csv"); 
 
         try {
             FileWriter outputfile = new FileWriter(file); 
             CSVWriter writer = new CSVWriter(outputfile); 
-            String[] header = {"Name", "Rating", "Review"}; 
+            String[] header = {"Name", "Rating", "Review", "Custom Advertisement"}; 
             writer.writeNext(header); 
     
             for (String[] dataRow : dataArr) {
@@ -69,10 +69,11 @@ class soup {
         try {
             FileWriter outputfile = new FileWriter("PotentialCustomers.csv"); 
             CSVWriter writer = new CSVWriter(outputfile); 
-            String[] header = {"Name", "Rating", "Review"}; 
+            String[] header = {"Name", "Rating", "Review", "Custom Advertisement"}; 
             writer.writeNext(header); 
     
             for (String[] dataRow : dataArr) {
+                System.out.println(dataRow[3]);
                 writer.writeNext(dataRow); 
             }
             // closing writer connection 
